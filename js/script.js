@@ -37,7 +37,6 @@ function updateHowToEnjoy() {
 
   const dusk = document.querySelector(".js-how-to-dusk");
   dusk.style.transform = `translateY(${duskTranslateY}%)`;
-  //dusk.style.maskImage = duskProgress >= 0.95 ? "none" : "";
 
   const duskMaskProgress = Math.min(1, Math.max(0, (duskProgress - 0.8) / 0.2));
 
@@ -49,6 +48,19 @@ function updateHowToEnjoy() {
   black 100%
 )`;
 
+  const duskTitle = dusk.querySelector(".js-how-to-enjoy_title");
+  const textProgress = Math.min(1, Math.max(0, (duskProgress - 0.7) / 0.3));
+  duskTitle.style.opacity = textProgress;
+
+  const textY = (1 - textProgress) * 20;
+  duskTitle.style.transform = `translateY(${textY}px)`;
+
+  const duskDesc = dusk.querySelector(".js-how-to-enjoy_desc");
+  const descProgress = Math.min(1, Math.max(0, (textProgress - 0.3) / 0.7));
+  duskDesc.style.opacity = descProgress;
+
+  const descY = (1 - descProgress) * 20;
+  duskDesc.style.transform = `translateY(${descY}px)`;
   // 夜の進捗率
   const nightProgress = Math.min(
     1,
@@ -76,6 +88,25 @@ function updateHowToEnjoy() {
   black ${nightMaskWidth}%,
   black 100%
 )`;
+  const nightTitle = night.querySelector(".js-how-to-enjoy_title");
+  const nightTextProgress = Math.min(
+    1,
+    Math.max(0, (nightProgress - 0.7) / 0.3),
+  );
+  nightTitle.style.opacity = nightTextProgress;
+
+  const nightTextY = (1 - nightTextProgress) * 20;
+  nightTitle.style.transform = `translateY(${nightTextY}px)`;
+
+  const nightDesc = night.querySelector(".js-how-to-enjoy_desc");
+  const nightDescProgress = Math.min(
+    1,
+    Math.max(0, (nightTextProgress - 0.3) / 0.7),
+  );
+  nightDesc.style.opacity = nightDescProgress;
+
+  const nightDescY = (1 - nightDescProgress) * 20;
+  nightDesc.style.transform = `translateY(${nightDescY}px)`;
 }
 
 window.addEventListener("scroll", updateHowToEnjoy);

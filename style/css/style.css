@@ -795,6 +795,16 @@ project > how-to-use
   line-height: 1.4;
 }
 
+.js-how-to-dusk .p-how-to-enjoy_title,
+.js-how-to-dusk .p-how-to-enjoy_desc {
+  opacity: 0;
+}
+
+.js-how-to-night .p-how-to-enjoy_title,
+.js-how-to-night .p-how-to-enjoy_desc {
+  opacity: 0;
+}
+
 .p-how-to-enjoy_desc {
   margin-inline: auto;
   width: fit-content;

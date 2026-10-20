@@ -99,7 +99,18 @@ project > how-to-use
   margin-bottom: clamp(48px, calc(3.93vw + 32.66px), 72px);
   line-height: 1.4;
 }
-
+.js-how-to-dusk {
+  .p-how-to-enjoy_title,
+  .p-how-to-enjoy_desc {
+    opacity: 0;
+  }
+}
+.js-how-to-night {
+  .p-how-to-enjoy_title,
+  .p-how-to-enjoy_desc {
+    opacity: 0;
+  }
+}
 .p-how-to-enjoy_desc {
   margin-inline: auto;
   width: fit-content;
