@@ -739,24 +739,41 @@ project > how-to-use
 
 .p-how-to_container {
   width: 100%;
+  height: 300vh;
+}
+
+.p-how-to-enjoy_list {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 .p-how-to-enjoy_item {
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
   padding-block: 69px;
   padding-inline: 20px;
   margin-inline: auto;
-  position: relative;
+}
+.p-how-to-enjoy_item:not(:first-child) {
+  transform: translateY(100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 100%);
 }
 .p-how-to-enjoy_item:nth-child(1) .p-how-to-enjoy_text {
   background-color: rgba(233, 238, 219, 0.4);
 }
-.p-how-to-enjoy_item:nth-child(2) .p-how-to-enjoy_text, .p-how-to-enjoy_item:nth-child(3) .p-how-to-enjoy_text {
+.p-how-to-enjoy_item:nth-child(1) .p-how-to-enjoy_text, .p-how-to-enjoy_item:nth-child(2) .p-how-to-enjoy_text, .p-how-to-enjoy_item:nth-child(3) .p-how-to-enjoy_text {
   background-color: transparent;
   background: linear-gradient(to bottom, rgba(255, 243, 223, 0) 0%, rgba(255, 243, 223, 0.7) 20%, rgba(255, 243, 223, 0.7) 80%, rgba(255, 243, 223, 0) 100%);
 }
 @media screen and (min-width: 600px) {
-  .p-how-to-enjoy_item:nth-child(2) .p-how-to-enjoy_text, .p-how-to-enjoy_item:nth-child(3) .p-how-to-enjoy_text {
+  .p-how-to-enjoy_item:nth-child(1) .p-how-to-enjoy_text, .p-how-to-enjoy_item:nth-child(2) .p-how-to-enjoy_text, .p-how-to-enjoy_item:nth-child(3) .p-how-to-enjoy_text {
     background: linear-gradient(to bottom, rgba(255, 243, 223, 0) 0%, rgba(255, 243, 223, 0.4) 10%, rgba(255, 243, 223, 0.6) 20%, rgba(255, 243, 223, 0.6) 80%, rgba(255, 243, 223, 0.4) 90%, rgba(255, 243, 223, 0) 100%);
   }
 }

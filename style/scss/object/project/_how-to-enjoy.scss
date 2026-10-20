@@ -21,19 +21,42 @@ project > how-to-use
 
 .p-how-to_container {
   width: 100%;
+  height: 300vh;
 }
-
+.p-how-to-enjoy_list {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: hidden;
+}
 .p-how-to-enjoy_item {
   width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
 
   padding-block: 69px;
   padding-inline: 20px;
   margin-inline: auto;
-  position: relative;
+
+  &:not(:first-child) {
+    transform: translateY(100%);
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 100%
+    );
+  }
 
   &:nth-child(1) .p-how-to-enjoy_text {
     background-color: rgba($color: #e9eedb, $alpha: 0.4);
   }
+  &:nth-child(1) .p-how-to-enjoy_text,
   &:nth-child(2) .p-how-to-enjoy_text,
   &:nth-child(3) .p-how-to-enjoy_text {
     background-color: transparent;
