@@ -1,0 +1,51 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+project > hero
+------------------------------
+*/
+
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+
+.p-hero {
+  margin-bottom: 180px;
+  width: 100%;
+  min-height: min(clamp(518px, calc(75.57vw + 223.26px), 979px), 100dvh);
+  background-image: url(../../img/p-hero-background.png);
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  @include g.mq(lg) {
+    background-image: url(../../img/p-hero-background-large.png);
+  }
+}
+
+.p-hero-catch {
+  font-size: clamp(14px, calc(2.95vw + 2.49px), 32px);
+  font-weight: $fw-semi-bold;
+  padding-top: 28px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+
+.p-hero-logo {
+  margin-top: 74px;
+  aspect-ratio: 107 / 64;
+  width: clamp(265px, calc(44.59vw + 91.1px), 537px);
+  height: auto;
+}
+
+.p-hero-meta {
+  margin-top: 80px;
+  font-size: clamp(14px, calc(2.95vw + 2.49px), 32px);
+  letter-spacing: 0.04em;
+}

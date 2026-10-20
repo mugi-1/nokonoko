@@ -1,0 +1,91 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+project > book-market
+------------------------------
+*/
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+.p-book-market {
+  margin-bottom: 180px;
+}
+
+.p-book-market-list {
+  display: flex;
+  flex-direction: column;
+  @include g.mq() {
+    flex-direction: row;
+    gap: 8%;
+    flex-wrap: wrap;
+  }
+}
+
+.p-book-market-item {
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+  @include g.mq() {
+    width: 46%;
+  }
+  &:not(:last-child) {
+    margin-bottom: 70px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 24%;
+    height: 4px;
+    background-color: $color-basic;
+    bottom: 0;
+    left: 34%;
+    clip-path: rect(0 100% 100% 0);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 4px;
+    background-color: $color-basic;
+    bottom: 0;
+    left: 58%;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 0% 0%);
+  }
+}
+
+.p-book-market-image {
+  margin-bottom: 16px;
+  width: 200px;
+  margin-inline: auto;
+
+  img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
+
+.p-book-market-text {
+  margin-bottom: 50px;
+}
+
+.p-book-market-title {
+  width: fit-content;
+  margin-inline: auto;
+  font-size: 24px;
+  font-weight: $fw-semi-bold;
+  border-bottom: 1px solid $color-basic;
+  margin-bottom: 8px;
+}
+
+.p-book-market-desc {
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto;
+  text-align: justify;
+}

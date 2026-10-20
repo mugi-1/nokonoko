@@ -1,0 +1,71 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+component > section-title
+------------------------------
+*/
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+
+.c-section-title {
+  margin-bottom: 64px;
+  margin-inline: auto;
+
+  background-color: $color-basic;
+  position: relative;
+  font-family: $font-family-en;
+  font-weight: $fw-semi-bold;
+  color: $color-background;
+  text-transform: uppercase;
+  padding-left: 11px;
+  padding-top: 2px;
+  font-size: 20px;
+
+  width: 178px;
+  height: 35px;
+
+  clip-path: path(
+    "M 177.8,33.15 L 0,34.83 L 4.38,3.74 L 162.58,3.74 C 172.84,3.79 178,0 178,0 L 177.8,33.15 Z"
+  );
+
+  @include g.mq(sm) {
+    margin-top: 140px;
+    margin-bottom: 100px;
+    width: 363px;
+    height: 72px;
+
+    /* 切り抜きパス本体（Figmaの座標を100%再現） */
+    clip-path: path(
+      "M 362.75,67.64 L 0,71.06 L 8.94,7.62 L 331.7,7.62 C 352.62,7.72 363.16,0 363.16,0 L 362.75,67.64 Z"
+    );
+
+    width: 363px;
+    height: 72px;
+
+    padding-left: 20px;
+    padding-top: 4px;
+    font-size: 40px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 383px;
+    height: 96px;
+    background-image: url(../..//img/backgrund-texture.png);
+
+    background-size: cover;
+    background-position: top left;
+    background-repeat: repeat-y;
+    z-index: $z-index-negative;
+  }
+}

@@ -1,0 +1,70 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+project > artists
+
+------------------------------
+*/
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+
+.p-artists {
+  margin-bottom: 180px;
+}
+
+.p-artists_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include g.mq() {
+    grid-template-columns: repeat(2, 45%);
+    column-gap: 10%;
+    flex-wrap: wrap;
+    //justify-content: start;
+  }
+}
+
+.p-artists_item {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 8px;
+  margin-bottom: 22px;
+  position: relative;
+  @include g.mq() {
+    margin-bottom: 32px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background-color: $color-basic;
+    bottom: -2px;
+    left: 0;
+    clip-path: rect(0 100% 100% 0);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background-color: $color-basic;
+    bottom: -2px;
+    left: 60%;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 0% 0%);
+  }
+}
+
+.p-artists_name {
+  font-weight: $fw-medium;
+}

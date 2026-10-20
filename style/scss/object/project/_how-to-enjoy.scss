@@ -1,0 +1,104 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+project > how-to-use
+
+------------------------------
+*/
+
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+.p-how-to {
+  margin-bottom: 180px;
+}
+
+.p-how-to_container {
+  width: 100%;
+}
+
+.p-how-to-enjoy_item {
+  width: 100%;
+
+  padding-block: 69px;
+  padding-inline: 20px;
+  margin-inline: auto;
+  position: relative;
+
+  &:nth-child(1) .p-how-to-enjoy_text {
+    background-color: rgba($color: #e9eedb, $alpha: 0.4);
+  }
+  &:nth-child(2) .p-how-to-enjoy_text,
+  &:nth-child(3) .p-how-to-enjoy_text {
+    background-color: transparent;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 243, 223, 0) 0%,
+      rgba(255, 243, 223, 0.7) 20%,
+      rgba(255, 243, 223, 0.7) 80%,
+      rgba(255, 243, 223, 0) 100%
+    );
+
+    @include g.mq(sm) {
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 243, 223, 0) 0%,
+        rgba(255, 243, 223, 0.4) 10%,
+        rgba(255, 243, 223, 0.6) 20%,
+        rgba(255, 243, 223, 0.6) 80%,
+        rgba(255, 243, 223, 0.4) 90%,
+        rgba(255, 243, 223, 0) 100%
+      );
+    }
+  }
+}
+
+.p-how-to-enjoy_text {
+  width: 100%;
+  //height: calc(100dvh - 70px - 69px);
+  min-height: calc(100dvh - 138px);
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.p-how-to-enjoy_title {
+  font-size: 32px;
+  font-size: clamp(32px, calc(5.25vw + 11.54px), 64px);
+  font-weight: $fw-medium;
+  text-align: center;
+  margin-bottom: 48px;
+  margin-bottom: clamp(48px, calc(3.93vw + 32.66px), 72px);
+  line-height: 1.4;
+}
+
+.p-how-to-enjoy_desc {
+  margin-inline: auto;
+  width: fit-content;
+  font-size: 16px;
+  font-size: clamp(16px, calc(2.62vw + 5.77px), 32px);
+  font-weight: $fw-semi-bold;
+}
+.p-how-to-enjoy_paragraph {
+  display: block;
+  margin-bottom: 34px;
+}
+
+.p-how-to-enjoy_image {
+  position: absolute;
+  inset: 0;
+  z-index: $z-index-negative;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 70%;
+    margin-inline: auto;
+  }
+}

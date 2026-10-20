@@ -1,0 +1,41 @@
+// ==========================================
+// カラー設定（Color）
+// ==========================================
+
+$color-basic: #2b221d;
+$color-primary: #e8d56a;
+$color-dark-green: #5e6b4d;
+
+$color-background: #f7f4ee;
+
+// ==========================================
+// フォント設定（Font Family）
+// ==========================================
+
+$font-family-base: "Noto Sans JP", sans-serif;
+$font-family-en: "Roboto", sans-serif;
+
+// ==========================================
+// フォントサイズ（Font Size）
+// ==========================================
+$fw-light: 300; /* Figma: Light */
+$fw-regular: 400; /* Figma: Regular */
+$fw-medium: 500; /* Figma: Medium */
+$fw-semi-bold: 600; /* Figma: Bold */
+$fw-bold: 800; /* Figma: Bold */
+
+// ==========================================
+// ブレイクポイント（Breakpoint）
+// ==========================================
+// レスポンシブ切り替え用
+$breakpoint-md: 768px;
+$breakpoint-sm: 600px;
+
+// ==========================================
+// z-index
+// ==========================================
+
+$z-index-header: 30;
+$z-index-default: 1;
+$z-index-negative: -1;
+$z-index-positive: 2;

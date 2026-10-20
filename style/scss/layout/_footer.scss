@@ -1,0 +1,106 @@
+@use "../foundation/variables" as *;
+@use "../foundation/breakpoints" as g;
+
+/*!
+layout > footer
+------------------------------
+*/
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+.l-footer {
+  width: 100%;
+  position: relative;
+  padding-top: 22px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background-color: $color-basic;
+    top: 0;
+    left: 0;
+    clip-path: rect(0 100% 100% 0);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background-color: $color-basic;
+    top: 0;
+    left: 60%;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 0% 0%);
+  }
+}
+
+.l-footer_sns-list {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+
+  @include g.mq() {
+    gap: 60px;
+  }
+}
+
+.l-footer_sns-item {
+  font-size: 16px;
+  font-weight: $fw-bold;
+  margin-bottom: 34px;
+  @include g.mq() {
+    font-size: 18px;
+  }
+}
+
+.l-footer_sns-link {
+  display: block;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.l-footer_sns-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.l-footer_copyright {
+  display: block;
+  width: 100%;
+
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 26px;
+  margin-bottom: 18px;
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background-color: $color-basic;
+    bottom: -2px;
+    left: 0;
+    clip-path: rect(0 100% 100% 0);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background-color: $color-basic;
+    bottom: -2px;
+    left: 60%;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 0% 0%);
+  }
+}

@@ -1,0 +1,69 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+project > news
+------------------------------
+*/
+
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+.p-news {
+  margin-bottom: 180px;
+}
+
+.p-news_list {
+  width: fit-content;
+  margin-inline: auto;
+  @include g.mq() {
+    width: 100%;
+    max-width: 620px;
+  }
+}
+
+.p-news_item {
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background-color: $color-basic;
+    bottom: -2px;
+    left: 0;
+    clip-path: rect(0 100% 100% 0);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background-color: $color-basic;
+    bottom: -2px;
+    left: 60%;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 0% 0%);
+  }
+}
+
+.p-news_date {
+  background-color: rgba($color: #2b221d, $alpha: 0.6);
+  color: $color-background;
+  font-size: 16px;
+  font-weight: $fw-semi-bold;
+  padding-inline: 4px;
+  margin-bottom: 8px;
+}
+
+.p-news_title {
+  font-weight: $fw-semi-bold;
+  padding-bottom: 12px;
+}

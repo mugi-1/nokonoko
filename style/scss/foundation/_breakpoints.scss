@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "variables" as *;
+
+// global > breakpoint
+// ------------------------------
+$breakpoints: (
+  "sm": $breakpoint-sm,
+  "md": $breakpoint-md,
+  "lg": 1000px,
+);
+
+@mixin mq($breakpoint: md) {
+  @media screen and (min-width: #{map.get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}

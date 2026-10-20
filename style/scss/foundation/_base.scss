@@ -1,0 +1,15 @@
+@use "variables" as *;
+@use "breakpoints" as g;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.7;
+  font-size: 18px;
+  color: $color-basic;
+  font-family: $font-family-base;
+
+  @include g.mq() {
+    font-size: 20px;
+  }
+}

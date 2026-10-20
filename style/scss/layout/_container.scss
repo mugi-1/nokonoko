@@ -1,0 +1,26 @@
+@use "../foundation/variables" as *;
+@use "../foundation/breakpoints" as g;
+
+/*!
+layout > container
+------------------------------
+*/
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+
+.l-container {
+  padding-inline: 20px;
+  margin-inline: auto;
+  width: 100%;
+
+  @include g.mq() {
+    max-width: 1000px;
+  }
+}

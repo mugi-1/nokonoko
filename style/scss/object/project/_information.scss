@@ -1,0 +1,68 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/breakpoints" as g;
+/*!
+project > information
+------------------------------
+*/
+
+/*
+  @media (any-hover: hover) {
+    &:hover {
+
+    }
+  }
+  @include g.mq() {
+  }
+*/
+.p-information {
+  margin-bottom: 100px;
+  width: 100%;
+  background-color: $color-primary;
+  padding-block: 40px;
+  position: relative;
+  //z-index: $z-index-negative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    width: auto;
+    height: 75%;
+    aspect-ratio: 261 / 276;
+    background-image: url(../../img/p-information-background.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0%;
+    left: -20%;
+    z-index: $z-index-default;
+    @include g.mq(sm) {
+      left: -10%;
+    }
+    @include g.mq() {
+      left: 0%;
+    }
+  }
+}
+
+.p-information-section-title {
+  margin-top: 0;
+  margin-bottom: 34px;
+}
+
+.p-information-container {
+  width: 70%;
+  margin-inline: auto;
+  position: relative;
+  z-index: $z-index-positive;
+}
+
+.p-information_title {
+  color: $color-dark-green;
+  font-weight: $fw-bold;
+  margin-bottom: 8px;
+}
+
+.p-information_text {
+  font-weight: $fw-semi-bold;
+  margin-bottom: 8px;
+}
