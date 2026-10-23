@@ -16,15 +16,18 @@ project > artists
 */
 
 .p-artists {
-  margin-bottom: 180px;
+  padding-top: 100px;
+  margin-bottom: 80px;
 }
 
 .p-artists_list {
+  width: 96%;
+  margin-inline: auto;
   display: grid;
   grid-template-columns: 1fr;
   @include g.mq() {
     grid-template-columns: repeat(2, 45%);
-    column-gap: 10%;
+    column-gap: 8%;
     flex-wrap: wrap;
     //justify-content: start;
   }
@@ -32,7 +35,7 @@ project > artists
 
 .p-artists_item {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
@@ -42,6 +45,7 @@ project > artists
   position: relative;
   @include g.mq() {
     margin-bottom: 32px;
+    max-width: 600px;
   }
   &::before {
     content: "";

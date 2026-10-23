@@ -5,12 +5,23 @@ layout > header
 ------------------------------
 */
 .l-header {
-  display: none;
   position: fixed;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 12px;
   background-color: $color-background;
+  z-index: $z-index-header;
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+
+  &.is-scrolled {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .l-header_container {
@@ -19,76 +30,119 @@ layout > header
   align-items: center;
 }
 
+.l-header-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  @include g.mq(sm) {
+    gap: 16px;
+  }
+}
+
 .l-header_hamburger {
-  display: inline-block;
-  width: 47px;
-  height: 64px;
-  background-image: url(../../img/hamburger-background.png);
+  aspect-ratio: 60 /42;
+  width: auto;
+  height: 46px;
+  padding-top: 14px;
+
+  @include g.mq(sm) {
+    height: 52px;
+    padding-top: 16px;
+  }
+
+  background-image: url(../../img/l-header-menu.svg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  span {
-    position: absolute;
-    width: 26px;
-    height: 2px;
-    left: 10px;
-    top: 24px;
-    background-color: $color-basic;
-    opacity: 1;
-    transition:
-      transform 0.5s,
-      opacity 0.3s;
+  transform: rotate(0) translateY(0);
+  transition: transform 0.3s ease;
 
-    &:nth-child(1) {
-      transform: translateY(-8px);
-    }
-    &:nth-child(3) {
-      transform: translateY(8px);
-    }
-
-    &:nth-child(4) {
-      width: auto;
-      height: auto;
-      background-color: transparent;
-      top: auto;
-      bottom: 12px;
-      left: 4px;
-    }
-
-    .is-open & {
-      &:nth-child(1) {
-        transform: translateY(0) rotate(45deg);
-      }
-      &:nth-child(2) {
-        opacity: 0;
-      }
-      &:nth-child(3) {
-        transform: translateY(0) rotate(-45deg);
-      }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: rotate(3deg) translateY(-2px);
     }
   }
 }
+
+.l-header_hamburger-text-menu {
+  display: block;
+  .is-open & {
+    display: none;
+  }
+}
+
+.l-header_hamburger-text-close {
+  display: none;
+  .is-open & {
+    display: block;
+  }
+}
+
 .l-header_hamburger-text {
   display: block;
-
   font-size: 14px;
   line-height: 1;
   font-weight: $fw-semi-bold;
 }
 .l-header_logo {
-  display: inline-block;
-  margin-left: 8px;
-  width: 107px;
-  height: 64px;
+  margin-left: 6px;
+
+  img {
+    height: 0px;
+    width: auto;
+    height: 60px;
+    @include g.mq(sm) {
+      height: 40px;
+    }
+    @include g.mq() {
+      height: 50px;
+    }
+  }
 }
 
-.l-heaer-ticket {
-  display: none;
+.l-header_ticket {
+  position: relative;
+  background-color: $color-background;
+  margin-right: 22px;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  img {
+    aspect-ratio: 101 /46;
+    width: auto;
+    height: 46px;
+    @include g.mq(sm) {
+      height: 46px;
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 54px;
+    height: 54px;
+    background-image: url(../../img/l-header-ticket-buy.svg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: -32px;
+    bottom: -12px;
+    transform: scale(1);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $color-primary;
+      &::after {
+        transform: scale(1.1);
+      }
+    }
+  }
 }
 
 .l-header_nav {
-  position: fixed;
+  position: absolute;
   visibility: hidden;
   opacity: 0;
   transition:
@@ -97,11 +151,10 @@ layout > header
 
   height: 100vh;
   width: 100vw;
-  padding: 20px 0 0 20px;
+  padding: 40px 0 0 40px;
 
-  top: 104px;
+  top: 100%;
   left: 0;
-  z-index: $z-index-negative;
 
   background-color: $color-basic;
   color: $color-background;
@@ -115,4 +168,32 @@ layout > header
 .l-header_nav-list {
   display: flex;
   flex-direction: column;
+}
+
+.l-header_nav-link {
+  display: block;
+  width: fit-content;
+  padding-bottom: 8px;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $color-background;
+
+    transform-origin: left;
+    transform: scaleX(0);
+    opacity: 0;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+  }
 }

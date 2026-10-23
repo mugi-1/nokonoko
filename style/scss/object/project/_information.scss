@@ -15,10 +15,16 @@ project > information
   }
 */
 .p-information {
-  margin-bottom: 100px;
+  padding-top: 100px;
+  margin-bottom: 80px;
   width: 100%;
+}
+.p-information-container {
+  width: 100%;
+
+  margin-inline: auto;
   background-color: $color-primary;
-  padding-block: 40px;
+  padding-block: 80px;
   position: relative;
   //z-index: $z-index-negative;
   overflow: hidden;
@@ -49,8 +55,9 @@ project > information
   margin-bottom: 34px;
 }
 
-.p-information-container {
+.p-information-contents {
   width: 70%;
+  max-width: 700px;
   margin-inline: auto;
   position: relative;
   z-index: $z-index-positive;

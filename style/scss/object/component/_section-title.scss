@@ -36,7 +36,6 @@ component > section-title
   );
 
   @include g.mq(sm) {
-    margin-top: 140px;
     margin-bottom: 100px;
     width: 363px;
     height: 72px;
@@ -49,8 +48,8 @@ component > section-title
     width: 363px;
     height: 72px;
 
-    padding-left: 20px;
-    padding-top: 4px;
+    padding-left: 30px;
+    padding-top: 5px;
     font-size: 40px;
   }
 
@@ -59,13 +58,17 @@ component > section-title
     position: absolute;
     top: -10px;
     left: -10px;
-    width: 383px;
-    height: 96px;
+    width: 188px;
+    height: 55px;
     background-image: url(../..//img/backgrund-texture.png);
 
     background-size: cover;
     background-position: top left;
     background-repeat: repeat-y;
     z-index: $z-index-negative;
+    @include g.mq(sm) {
+      width: 383px;
+      height: 96px;
+    }
   }
 }

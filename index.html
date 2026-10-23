@@ -21,6 +21,25 @@
   <body>
     <header class="l-header js-header">
       <div class="l-header_container l-container">
+        <h1 class="l-header_logo">
+          <a href="#hero">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="./img/l-header-logo.svg"
+                width="281"
+                height="45"
+              />
+              <img
+                src="./img/l-header-logo-horizontal.svg"
+                width="281"
+                height="45"
+                alt="NokoNoko  - 森の中で、本と音楽を楽しむフェス"
+                decoding="async"
+              />
+            </picture>
+          </a>
+        </h1>
         <div class="l-header-menu">
           <button
             type="button"
@@ -30,69 +49,155 @@
             <span></span>
             <span></span>
             <span></span>
-            <span class="l-header_hamburger-text">menu</span>
+            <span class="l-header_hamburger-text">
+              <span class="l-header_hamburger-text-menu">menu</span>
+              <span class="l-header_hamburger-text-close">close</span>
+            </span>
           </button>
-          <h1 class="l-header_logo">
-            <a href="#hero"
-              ><img
-                src="./img/l-header-logo.png"
-                width="107"
-                height="64"
-                alt="NokoNoko  - 森の中で、本と音楽を楽しむフェス"
-                decoding="async"
-            /></a>
-          </h1>
-        </div>
-        <div class="l-header_ticket">
-          <a href="#">
-            <img
-              src="./img/l-header-ticket.svg"
-              width="137"
-              height="79"
-              alt="チケット購入"
-          /></a>
+          <div class="l-header_ticket">
+            <a href="#">
+              <picture>
+                <source
+                  media="(max-width: 600px)"
+                  srcset="./img/l-header-ticket01.svg"
+                  width="125"
+                  height="52"
+                />
+                <img
+                  src="./img/l-header-ticket.svg"
+                  width="125"
+                  height="52"
+                  alt="チケット購入"
+                />
+              </picture>
+            </a>
+          </div>
         </div>
         <nav class="l-header_nav js-menu-nav">
           <ul class="l-header_nav-list">
             <li class="l-header_nav-item">
-              <a href="#howtoenjoy">how to enjoy</a>
+              <a class="l-header_nav-link" href="#howtoenjoy">how to enjoy</a>
             </li>
-            <li class="l-header_nav-item"><a href="#artists">artists</a></li>
             <li class="l-header_nav-item">
-              <a href="#book-market">book market</a>
+              <a class="l-header_nav-link" href="#artists">artists</a>
             </li>
-            <li class="l-header_nav-item"><a href="#news">news</a></li>
             <li class="l-header_nav-item">
-              <a href="#information">information</a>
+              <a class="l-header_nav-link" href="#book-market">book market</a>
+            </li>
+            <li class="l-header_nav-item">
+              <a class="l-header_nav-link" href="#news">news</a>
+            </li>
+            <li class="l-header_nav-item">
+              <a class="l-header_nav-link" href="#information">information</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <div class="p-hero l-container" id="hero">
+      <div class="p-hero l-container js-hero" id="hero">
         <p class="p-hero-catch">
           森の中で、
           <span class="u-br">本と音楽を</span>
           <span class="u-br">楽しむフェス</span>
         </p>
         <div class="p-hero-logo">
-          <img
-            src="./img/l-header-logo.png"
-            width="537"
-            height="320"
-            alt="NokoNoko"
-            decoding="async"
-          />
+          <svg
+            id="_レイヤー_2"
+            data-name="レイヤー 2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 173.7 103.41"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #2b221d;
+                }
+              </style>
+            </defs>
+            <g id="_レイヤー_1-2" data-name="レイヤー 1">
+              <g id="_完成" data-name="完成">
+                <g class="p-hero_logo-pop" style="--delay: 1s">
+                  <path
+                    class="cls-1"
+                    d="M6.97,54.41c-2.34-.16-4.53-.61-6.56-1.35v-1.88l.82-17.75L0,10.58l.23-.23.35-.23h7.62l2.29.29c1.91,4.22,3.93,8.39,6.04,12.51,2.11,4.12,4.18,8.21,6.21,12.28h.35v-1.52l-.18-.23v-9.38l-.94-14.41,2.11-.18.18.18h7.97c.39.31.53.74.41,1.29-.39,4.77-.76,9.44-1.11,14.03-.35,4.59-.47,9.27-.35,14.03l.88,14.24-.53.94-2.58.23-6.86-.94h.18v-.41c-2.15-3.59-4.12-7.43-5.92-11.51-1.8-4.08-3.81-7.94-6.04-11.57v.64l1,23.55-4.34.23Z"
+                  />
+                </g>
+                <g class="p-hero_logo-pop" style="--delay: 1.4s">
+                  <path
+                    class="cls-1"
+                    d="M75.24,44.59c-.94,0-1.72-.43-2.34-1.29v-1.58c.39-2.23.7-4.37.94-6.45.23-2.07.41-4.34.53-6.8v-9.67l-1.46-17.23c1.41-.74,2.89-1.15,4.45-1.23,1.56-.08,3.12-.19,4.69-.35l2.23.64v.76l-.18.18v9.9l-.82,6.09,1.35-1.35c2.03-2.62,3.81-5.3,5.33-8.06s3.14-5.4,4.86-7.94l6.86-.23,2.7.64v1.29c-1.13,2.62-2.48,5.07-4.04,7.35-1.56,2.29-3.26,4.52-5.1,6.71l-.7.64v.64c1.52,5,3.4,9.62,5.62,13.86,2.23,4.24,4.39,8.68,6.5,13.33l-3.46.12c-1.6,0-3.23.06-4.89.18-1.66.12-3.25-.12-4.78-.7-.94-3.48-1.95-6.89-3.05-10.25-1.09-3.36-2.03-6.78-2.81-10.25h-.23l-2.46,3.52v2.93l.59,11.72-.23,2.52-.7.35h-9.38Z"
+                  />
+                </g>
+
+                <g class="p-hero_logo-run" style="--delay: 2s">
+                  <path
+                    class="cls-1"
+                    d="M47.54,103.41c-2.34-.16-4.53-.61-6.56-1.35v-1.88l.82-17.75-1.23-22.85.23-.23.35-.23h7.62l2.29.29c1.91,4.22,3.93,8.39,6.04,12.51,2.11,4.12,4.18,8.21,6.21,12.28h.35v-1.52l-.18-.23v-9.38l-.94-14.41,2.11-.18.18.18h7.97c.39.31.53.74.41,1.29-.39,4.77-.76,9.44-1.11,14.03-.35,4.59-.47,9.27-.35,14.03l.88,14.24-.53.94-2.58.23-6.86-.94h.18v-.41c-2.15-3.59-4.12-7.43-5.92-11.51-1.8-4.08-3.81-7.94-6.04-11.57v.64l1,23.55-4.34.23Z"
+                  />
+                </g>
+                <g class="p-hero_logo-run" style="--delay: 2.6s">
+                  <path
+                    class="cls-1"
+                    d="M90.89,101.3c-2.38-.35-4.51-.98-6.39-1.88s-3.63-2.25-5.27-4.04c-1.13-1.33-1.88-2.89-2.23-4.69-.35-1.8-.49-3.96-.41-6.5.43-1.76,1.06-3.59,1.9-5.51.84-1.91,1.98-3.5,3.43-4.75,1.17-1.37,2.71-2.29,4.63-2.75,1.91-.47,3.91-.64,5.98-.53,2.73.39,5.25,1.54,7.56,3.46,2.11,2.34,3.39,4.52,3.84,6.53.45,2.01.67,4.52.67,7.53-.23,1.88-.77,3.62-1.61,5.24-.84,1.62-2,3.06-3.49,4.31-1.21,1.21-2.51,2.11-3.9,2.7-1.39.59-2.96.88-4.72.88ZM93.24,94.04c1.02-.86,1.78-1.85,2.29-2.99,1.02-1.72,1.13-3.93.35-6.62-.12-1.09-.61-2.11-1.46-3.05-.78-.74-1.68-1.05-2.7-.94-.86.43-1.48,1.04-1.88,1.82-.74,1.95-1.11,4.39-1.11,7.32,0,1.48.43,2.77,1.29,3.87.82.55,1.74.82,2.75.82l.47-.23Z"
+                  />
+                </g>
+                <g class="p-hero_logo-run" style="--delay: 3.4s">
+                  <path
+                    class="cls-1"
+                    d="M112.8,102.59c-.94,0-1.72-.43-2.34-1.29v-1.58c.39-2.23.7-4.37.94-6.45.23-2.07.41-4.34.53-6.8v-9.67l-1.46-17.23c1.41-.74,2.89-1.15,4.45-1.23,1.56-.08,3.12-.19,4.69-.35l2.23.64v.76l-.18.18v9.9l-.82,6.09,1.35-1.35c2.03-2.62,3.81-5.3,5.33-8.06s3.14-5.4,4.86-7.94l6.86-.23,2.7.64v1.29c-1.13,2.62-2.48,5.07-4.04,7.35-1.56,2.29-3.26,4.52-5.1,6.71l-.7.64v.64c1.52,5,3.4,9.62,5.62,13.86,2.23,4.24,4.39,8.68,6.5,13.33l-3.46.12c-1.6,0-3.23.06-4.89.18-1.66.12-3.25-.12-4.78-.7-.94-3.48-1.95-6.89-3.05-10.25-1.09-3.36-2.03-6.78-2.81-10.25h-.23l-2.46,3.52v2.93l.59,11.72-.23,2.52-.7.35h-9.38Z"
+                  />
+                </g>
+                <g class="p-hero_logo-pop" style="--delay: 4.4s">
+                  <path
+                    class="cls-1"
+                    d="M159.99,101.3c-2.38-.35-4.51-.98-6.39-1.88s-3.63-2.25-5.27-4.04c-1.13-1.33-1.88-2.89-2.23-4.69-.35-1.8-.49-3.96-.41-6.5.43-1.76,1.06-3.59,1.9-5.51.84-1.91,1.98-3.5,3.43-4.75,1.17-1.37,2.71-2.29,4.63-2.75,1.91-.47,3.91-.64,5.98-.53,2.73.39,5.25,1.54,7.56,3.46,2.11,2.34,3.39,4.52,3.84,6.53.45,2.01.67,4.52.67,7.53-.23,1.88-.77,3.62-1.61,5.24-.84,1.62-2,3.06-3.49,4.31-1.21,1.21-2.51,2.11-3.9,2.7-1.39.59-2.96.88-4.72.88ZM160.63,93.62c1.72-1,3.02-2.15,3.88-3.46,1.72-1.99,1.92-4.55.6-7.67-.2-1.27-1.03-2.44-2.49-3.53-1.33-.86-2.85-1.22-4.58-1.09-1.46.5-2.52,1.2-3.18,2.1-1.26,2.26-1.89,5.09-1.89,8.49,0,1.72.73,3.21,2.19,4.48,1.39.63,2.95.95,4.68.95l.8-.27Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M156.14,89.16c-.28-.17-.4-.22-.45-.58-.1-.23-.06-.47-.09-.78-.03-.31.11-.74.15-1.18.05-.5.13-.78.22-1.11.08-.3-.28-1.23-.12-1.04.28.32.53.39.7.31.17-.08.37-.36.56-.34.25.07.34.02.54.36.14.23.17.46.23.86.05.35.08,1.08,0,1.6-.05.35-.11.6-.28.98-.14.32-.13.35-.28.6-.08.14-.31.54-.87.42"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M161.78,87.99c-.56-.07-.66-.53-.69-.69-.06-.29-.05-.31-.08-.66-.04-.41-.02-.67.03-1.02.08-.52.33-1.2.48-1.52.17-.36.27-.57.48-.74.3-.25.37-.18.62-.16.18.04.29.37.43.51.14.14.4.15.76-.06.21-.12-.41.64-.42.95-.01.34-.02.63-.13,1.12-.09.43-.09.88-.21,1.17-.12.29-.16.52-.32.71-.16.33-.29.34-.61.4"
+                  />
+                </g>
+
+                <g class="p-hero_logo-pop" style="--delay: 1.7s">
+                  <path
+                    class="cls-1"
+                    d="M121.91,38.06c-2.34-.31-2.73-.44-5-1.23-2.07-.72-3.96-1.75-5.63-3.9-1.15-1.59-2.81-3.28-3.17-5.43-.36-2.15-.5-4.74-.42-7.77.44-2.1,1.08-4.29,1.94-6.58.85-2.29,2.02-4.18,3.49-5.67,1.19-1.63,2.76-2.73,4.71-3.29,1.95-.56,3.98-.77,6.08-.63,2.78.47,5.35,1.84,7.7,4.13,2.15,2.8,3.45,5.4,3.91,7.81.46,2.4.69,5.4.69,9-.24,2.24-.79,4.33-1.64,6.27-.86,1.94-2.81,3.66-4.32,5.15-1.35,1.34-3.65,1.89-4.44,2.04-1.99.37-2.29.33-3.9.11ZM122.61,26.92c1.03-1.03,1.81-2.22,2.33-3.57,1.03-2.05,1.15-4.69.36-7.91-.12-1.31-.62-2.52-1.49-3.64-.8-.89-1.71-1.26-2.74-1.12-.88.51-1.51,1.24-1.91,2.17-.76,2.33-1.13,5.25-1.13,8.75,0,1.77.44,3.31,1.31,4.62.84.65,1.77.98,2.8.98l.48-.28Z"
+                  />
+                </g>
+                <g class="p-hero_logo-pop" style="--delay: 1.1s">
+                  <path
+                    class="cls-1"
+                    d="M45.38,18.86c3.26-2.03,6.87-.85,8.8-.74,2.55.35,4.72,1.4,6.68,3.27.92.88,3.59,3.79,3.94,5.75.32,1.83,1.13,3.8.63,6.8-.28,1.68-.55,3.54-1.47,4.91-1.48,2.2-1.71,2.43-3.27,3.71-1.04.85-2.34,1.9-3.63,2.43-1.29.53-2.76.79-4.39.79-2.22-.32-3.61-.55-5.95-1.69-1.73-.85-3.46-2.69-3.95-3.72-1.16-1.86-1.58-3.14-2.03-4.74-.58-2.09-1.17-3.12-.93-5.4.4-3.66,1.1-6.91,3.15-9.14"
+                  />
+                </g>
+              </g>
+            </g>
+          </svg>
         </div>
         <p class="p-hero-meta">
           2027.06.12
           <span class="u-br">YAMANASHI</span>
         </p>
+
+        <div class="p-hero_leaf-fall">
+          <img class="p-hero_leaf-sway" src="./img/p-hero-leaf01.svg" alt="" />
+        </div>
+        <div class="p-hero_leaf-fall p-hero_leaf-fall__small">
+          <img
+            class="p-hero_leaf-sway p-hero_leaf-sway__small"
+            src="./img/p-hero-leaf02.svg"
+            alt=""
+          />
+        </div>
       </div>
-      <section class="p-how-to" id="howtoenjoy">
-        <h2 class="c-section-title">how to enjoy</h2>
-        <div class="p-how-to_container js-how-to-container">
+      <section class="p-how-to js-how-to" id="howtoenjoy">
+        <h2 class="c-section-title c-fade">how to enjoy</h2>
+        <div class="p-how-to_container js-how-to-container c-fade">
           <ul class="p-how-to-enjoy_list">
             <li class="p-how-to-enjoy_item">
               <div class="p-how-to-enjoy_text">
@@ -183,8 +288,8 @@
         </div>
       </section>
       <section class="p-artists l-container" id="artists">
-        <h2 class="c-section-title">artists</h2>
-        <ul class="p-artists_list">
+        <h2 class="c-section-title c-fade">artists</h2>
+        <ul class="p-artists_list c-fade">
           <li class="p-artists_item">
             <p class="p-artists_name">あまやどり</p>
             <p class="p-artists_genre">live</p>
@@ -233,8 +338,8 @@
         </ul>
       </section>
       <section class="p-book-market l-container" id="book-market">
-        <h2 class="c-section-title">book market</h2>
-        <ul class="p-book-market-list">
+        <h2 class="c-section-title c-fade">book market</h2>
+        <ul class="p-book-market-list c-fade">
           <li class="p-book-market-item">
             <div class="p-book-market-image">
               <img
@@ -286,8 +391,8 @@
         </ul>
       </section>
       <section class="p-news l-container" id="news">
-        <h2 class="c-section-title">news</h2>
-        <div class="p-news_list">
+        <h2 class="c-section-title c-fade">news</h2>
+        <div class="p-news_list c-fade">
           <article class="p-news_item">
             <time class="p-news_date" datetime="2027-04-10">2027.04.10</time>
             <h3 class="p-news_title">出演アーティストを発表しました！</h3>
@@ -303,12 +408,12 @@
         </div>
       </section>
       <section class="p-information" id="information">
-        <div class="l-container">
-          <div class="p-information-container">
-            <h2 class="c-section-title p-information-section-title">
+        <div class="p-information-container">
+          <div class="p-information-contents">
+            <h2 class="c-section-title p-information-section-title c-fade">
               information
             </h2>
-            <dl class="p-information_list">
+            <dl class="p-information_list c-fade">
               <dt class="p-information_title">DATE / TIME</dt>
               <dd class="p-information_text">2027.06.12 (Sat) 11:00–21:00</dd>
               <dt class="p-information_title">PLACE</dt>

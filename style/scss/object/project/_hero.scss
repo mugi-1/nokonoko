@@ -16,16 +16,36 @@ project > hero
 */
 
 .p-hero {
-  margin-bottom: 180px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 100px;
   width: 100%;
   min-height: min(clamp(518px, calc(75.57vw + 223.26px), 979px), 100dvh);
-  background-image: url(../../img/p-hero-background.png);
-  background-size: contain;
-  background-position: top right;
-  background-repeat: no-repeat;
 
-  @include g.mq(lg) {
-    background-image: url(../../img/p-hero-background-large.png);
+  &::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-image: url(../../img/p-hero-background.png);
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: hero-fade-in 1.5s ease-out forwards;
+
+    @include g.mq(lg) {
+      background-image: url(../../img/p-hero-background-large.png);
+    }
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -35,6 +55,9 @@ project > hero
   padding-top: 28px;
   line-height: 2;
   letter-spacing: 0.04em;
+
+  opacity: 0;
+  animation: hero-fade-in 1.5s ease-out forwards;
 }
 
 .p-hero-logo {
@@ -42,10 +65,190 @@ project > hero
   aspect-ratio: 107 / 64;
   width: clamp(265px, calc(44.59vw + 91.1px), 537px);
   height: auto;
+  svg {
+    overflow: visible;
+  }
+}
+
+.p-hero_logo-pop {
+  opacity: 0;
+  animation: pop-animation 0.15s linear;
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes pop-animation {
+  0%,
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.p-hero_logo-run {
+  opacity: 0;
+  animation: run-animation 0.6s steps(1, end);
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes run-animation {
+  0% {
+    opacity: 0;
+    transform: translate(37px, 0);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(30px, 0);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(22px, 0);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(18px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(10px, 1px);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(3px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 
 .p-hero-meta {
   margin-top: 80px;
   font-size: clamp(14px, calc(2.95vw + 2.49px), 32px);
   letter-spacing: 0.04em;
+  opacity: 0;
+  animation: hero-fade-in 1.5s ease-out forwards;
+}
+
+.p-hero_leaf-fall {
+  position: absolute;
+
+  top: clamp(82px, calc(0.82vw + 78.8px), 87px);
+  right: clamp(66px, calc(0.66vw + 63.44px), 70px);
+
+  animation: leaf-fall 10s ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-delay: 3s;
+  opacity: 0;
+
+  &__small {
+    top: clamp(26px, calc(-2.13vw + 34.31px), 13px);
+    right: clamp(86px, calc(23.61vw - 6.07px), 230px);
+    animation-iteration-count: 1;
+    animation-delay: 5s;
+  }
+}
+
+@keyframes leaf-fall {
+  0% {
+    transform: translate(0, 0);
+  }
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(100px, 100vh);
+  }
+}
+.p-hero_leaf-sway {
+  width: clamp(32px, calc(2.62vw + 21.77px), 48px);
+  animation: leaf-sway 10s cubic-bezier(0.29, -0.24, 0.49, 1.02);
+  animation-iteration-count: 1;
+  animation-delay: 3s;
+  animation-fill-mode: both;
+
+  &__small {
+    width: clamp(24px, calc(1.97vw + 16.33px), 36px);
+    animation-iteration-count: 1;
+    animation-delay: 5s;
+  }
+}
+
+@keyframes leaf-sway {
+  0% {
+    transform: translateX(0) rotate(-20deg);
+    opacity: 1;
+  }
+  15% {
+    transform: translateX(10px) rotate(20deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-20px) rotate(-15deg);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translateX(-60px) rotate(140deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-90px) rotate(138deg);
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20px) rotate(0);
+  }
+}
+@include g.mq() {
+  @keyframes leaf-sway {
+    0% {
+      transform: translateX(0) rotate(-20deg);
+      opacity: 1;
+    }
+    15% {
+      transform: translateX(-100px) rotate(10deg);
+      opacity: 1;
+    }
+    25% {
+      transform: translateX(-70px) rotate(-20deg);
+      opacity: 1;
+    }
+
+    40% {
+      transform: translateX(-200px) rotate(140deg);
+      opacity: 1;
+    }
+
+    60% {
+      opacity: 1;
+    }
+
+    89% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(20px) rotate(0);
+    }
+  }
 }

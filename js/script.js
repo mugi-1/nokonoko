@@ -1,3 +1,7 @@
+// ==========================================
+// ハンバーガーメニューの開閉処理
+// ==========================================
+
 const menuBtn = document.querySelector(".js-hamburger-button");
 const menu = document.querySelector(".js-menu-nav");
 const header = document.querySelector(".js-header");
@@ -9,6 +13,30 @@ menuBtn.addEventListener("click", () => {
 menu.addEventListener("click", () => {
   header.classList.remove("is-open");
 });
+
+// ==========================================
+// ヘッダー表示制御
+// ==========================================
+
+const howTo = document.querySelector(".js-how-to");
+if (howTo && header) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.boundingClientRect.bottom > 0) {
+        header.classList.remove("is-scrolled");
+      } else {
+        header.classList.add("is-scrolled");
+      }
+
+      console.log("isIntersecting >>> " + entry.isIntersecting);
+      console.log(
+        "boundingClientRect.bottom >>> " + entry.boundingClientRect.bottom,
+      );
+    });
+  });
+
+  observer.observe(howTo);
+}
 
 // ==========================================
 // スクロールアニメーション
@@ -24,14 +52,19 @@ function updateHowToEnjoy() {
 
   const scrollAmount = Math.max(0, -rect);
 
-  const scrollDistance = container.offsetHeight - window.innerHeight;
-  const transitionDistance = scrollDistance / 2;
+  // const scrollDistance = container.offsetHeight - window.innerHeight;
+  // const transitionDistance = scrollDistance / 2;
+  // const delay = transitionDistance * 0.2;
+
+  const transitionDistance = window.innerHeight;
   const delay = transitionDistance * 0.2;
+  const duskStart = transitionDistance * 0.4;
+  const nightStart = transitionDistance * 1.4 + duskStart;
 
   // 夕暮れの進捗率
   const duskProgress = Math.min(
     1,
-    Math.max(0, scrollAmount / (transitionDistance - delay)),
+    Math.max(0, (scrollAmount - duskStart) / (transitionDistance - delay)),
   );
   const duskTranslateY = (1 - duskProgress) * 100;
 
@@ -64,10 +97,7 @@ function updateHowToEnjoy() {
   // 夜の進捗率
   const nightProgress = Math.min(
     1,
-    Math.max(
-      0,
-      (scrollAmount - transitionDistance) / (transitionDistance - delay),
-    ),
+    Math.max(0, (scrollAmount - nightStart) / (transitionDistance - delay)),
   );
 
   const nightTranslateY = (1 - nightProgress) * 100;
@@ -112,3 +142,22 @@ function updateHowToEnjoy() {
 window.addEventListener("scroll", updateHowToEnjoy);
 
 updateHowToEnjoy();
+
+// ==========================================
+// 監視対象に入った時の処理（ふわっと表示）
+// ==========================================
+
+const fadeItems = document.querySelectorAll(".c-fade");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+fadeItems.forEach((item) => {
+  observer.observe(item);
+});
