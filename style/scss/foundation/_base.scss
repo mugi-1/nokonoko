@@ -2,6 +2,7 @@
 @use "breakpoints" as g;
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 body {
   line-height: 1.7;
@@ -11,5 +12,8 @@ body {
   background-color: $color-background;
   @include g.mq() {
     font-size: 20px;
+  }
+  &.is-menu-open {
+    overflow: hidden;
   }
 }

@@ -187,6 +187,7 @@ iframe {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -201,6 +202,9 @@ body {
     font-size: 20px;
   }
 }
+body.is-menu-open {
+  overflow: hidden;
+}
 
 /*!
 layout > header
@@ -208,7 +212,10 @@ layout > header
 */
 .l-header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 92px;
   padding-top: 20px;
   padding-bottom: 12px;
   background-color: #f7f4ee;
@@ -610,7 +617,8 @@ component > animation
 .c-fade {
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s ease-out;
+  transform: 0.8s ease-out;
 }
 
 .c-fade.is-visible {
@@ -633,8 +641,8 @@ project > artists
   }
 */
 .p-artists {
-  padding-top: 100px;
-  margin-bottom: 80px;
+  padding-top: 150px;
+  margin-bottom: 30px;
 }
 
 .p-artists_list {
@@ -707,8 +715,8 @@ project > book-market
   }
 */
 .p-book-market {
-  padding-top: 100px;
-  margin-bottom: 80px;
+  padding-top: 150px;
+  margin-bottom: 30px;
 }
 
 .p-book-market-list {
@@ -1148,8 +1156,8 @@ project > information
   }
 */
 .p-information {
-  padding-top: 100px;
-  margin-bottom: 80px;
+  padding-top: 150px;
+  margin-bottom: 30px;
   width: 100%;
 }
 
@@ -1223,8 +1231,8 @@ project > news
   }
 */
 .p-news {
-  padding-top: 100px;
-  padding-bottom: 80px;
+  padding-top: 150px;
+  padding-bottom: 30px;
 }
 
 .p-news_list {

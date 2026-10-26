@@ -8,10 +8,12 @@ const header = document.querySelector(".js-header");
 
 menuBtn.addEventListener("click", () => {
   header.classList.toggle("is-open");
+  document.body.classList.toggle("is-menu-open");
 });
 
 menu.addEventListener("click", () => {
   header.classList.remove("is-open");
+  document.body.classList.remove("is-menu-open");
 });
 
 // ==========================================
@@ -19,23 +21,30 @@ menu.addEventListener("click", () => {
 // ==========================================
 
 const howTo = document.querySelector(".js-how-to");
-if (howTo && header) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.boundingClientRect.bottom > 0) {
-        header.classList.remove("is-scrolled");
-      } else {
-        header.classList.add("is-scrolled");
-      }
 
-      console.log("isIntersecting >>> " + entry.isIntersecting);
-      console.log(
-        "boundingClientRect.bottom >>> " + entry.boundingClientRect.bottom,
-      );
+if (howTo && header) {
+  const updateHeader = () => {
+    const howToBottom = howTo.getBoundingClientRect().bottom;
+
+    if (howToBottom > 0) {
+      header.classList.remove("is-scrolled");
+    } else {
+      header.classList.add("is-scrolled");
+    }
+  };
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  // ページ読み込み時にも判定
+  updateHeader();
+
+  document.querySelectorAll('a[href="#top"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      requestAnimationFrame(() => {
+        header.classList.remove("is-scrolled");
+      });
     });
   });
-
-  observer.observe(howTo);
 }
 
 // ==========================================
